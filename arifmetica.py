@@ -17,7 +17,7 @@ print ("multiplication:\t" , a , "*" , b , "=" , a * b)
 
 print ("division:\t" , a , "/" , b , "=" , a / b)
 
-print ("modulus:\t" , a , "%" , b , "=" , a % b)
+print ("modulo:\t" , a , "%" , b , "=" , a % b)
 
 print ("floor division:\t" , a , "//" , b , "=" , a // b)
 
