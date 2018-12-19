@@ -9,7 +9,6 @@ num = int(input("Please enter a Number:"))
 if num > 100:
     print("Enter a Number > 100")
 elif num < 100:
-    num == str
     print("Enter a Number < 100")
 else:
     num = 100
