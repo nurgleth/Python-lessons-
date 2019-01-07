@@ -8,13 +8,11 @@ while a <= 10:
         print("List b:", b)
         b += 1
 
-num = int(input("Please enter a Number = 10:"))
-if num != 10:
-    print("Try once more")
-    int(input("Please enter a Number = 10:"))
-else:
-     num = 10
-     print("Thanks")
 
 
 
+num = int(input("Enter a number please = 10:"))
+while num != 10:
+    print("1")
+    if int(input("Enter a number please = 10:")):
+        print("Thanks")
