@@ -11,8 +11,9 @@ while a <= 10:
 
 
 
-num = int(input("Enter a number please = 10:"))
-while num != 10:
-    print("1")
-    if int(input("Enter a number please = 10:")):
-        print("Thanks")
+num = input("Enter the number (1, 2, etc):")
+
+while not num.isdigit():
+          num = input("Enter the number (1, 2, etc):")
+else:
+     print("Thanks")
