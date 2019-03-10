@@ -89,3 +89,14 @@ def count_min_cost(N, price:list):
         C[i] = price[i] + min(C[i - 1], C[i - 2])
     return C[N]
 
+# Двумерные массивы
+
+"""
+список списков как НЕ НАДО создавать
+"""
+A = [[0] * M] * N
+
+"""
+ТАК ПРАВИЛЬНО
+"""
+A = [[0 * M] for i in range(N)]
