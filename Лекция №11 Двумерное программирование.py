@@ -27,7 +27,7 @@ def gis(C):
     for i in range(1, len(C) + 1):
         m = 0 # максимум
         for j in range(0, i):
-            if C[i] > C[j] and F[j] > m:
+            if C[i - 1] > C[j - 1] and F[j - 1] > m:
                 m = F[j]
         F[i] = m + 1
     return F[len(C)]
