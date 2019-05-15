@@ -30,7 +30,7 @@ class PizzaRobot(Chef): # класс робот наследующий от по
     def work(self):
         print(self.name, "make pizza")
 
-if __name__ == "__main__": # классическая самопроверка класса
+if __name__ == "__main__":  # классическая самопроверка класса
     bob = PizzaRobot("bob") # Создать робота с именем bob
     print(bob)              # Вызвать унаследованный метод __repr__
     bob.work()              # Выполнить действие, зависящее от типа
