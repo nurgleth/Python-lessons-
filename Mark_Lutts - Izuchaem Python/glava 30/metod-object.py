@@ -47,6 +47,6 @@ class Eggs:
     def m1(self, n):
         print(n)
     def m2(self):
-        x = self.m1
-        x(42)
+        x = self.m1         # Еще один объект связанного метода
+        x(42)               # Выглядит как обычная функция
 Eggs().m2()
