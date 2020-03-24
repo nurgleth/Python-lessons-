@@ -107,3 +107,17 @@ def is_braces_sequence_correct(s: str):
 if __name__== "__main__":
     import doctest
     doctest.testmod(verbose=True)
+
+# Обратная польская нотация
+"""
+Алгоритм вычисления выражений в посфиксной нотации 5, 2, + тоже самое что и 5 + 2
+"""
+_OPN = []
+pocket = input()
+for i in range(len(pocket)):
+    if isinstance(i, int):
+        puch(i)
+    else:
+        y = pop()
+        x = pop()
+

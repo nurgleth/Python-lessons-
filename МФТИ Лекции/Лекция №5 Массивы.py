@@ -114,7 +114,7 @@ def invert_array_raght(A:list, N:int):
     for k in range(N-2, -1, -1):
          A6[k + 1] = A6[k]
     A[0] = tmp # возвращаем обратно нулевой объект
-Решето Эратосфена
+#Решето Эратосфена
 """
 A = [True]*N
 A[0] = A[1] = False
@@ -123,4 +123,4 @@ for k in range(2, N):
         for m in range(2*k, N, k):
             A[m] = False
 for k in range(N):
-    print(k,"-", "простое" if A[k] else "состовное")
+    print(k,"-", "простое" if A[k] else "состовное")"""
