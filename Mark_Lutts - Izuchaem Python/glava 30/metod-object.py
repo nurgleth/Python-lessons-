@@ -50,3 +50,67 @@ class Eggs:
         x = self.m1         # Еще один объект связанного метода
         x(42)               # Выглядит как обычная функция
 Eggs().m2()
+
+"""
+В Python 3.0 несвязанные методы являются функциями
+При вызове метода через имя класса передавать ему экземпляр
+требуется, только если он ожидает получить его
+"""
+class Selfless:
+    def __init__(self, data):
+        self.data = data
+    def selfless(arg1, arg2): # Простая функция в 3.0
+        return arg1 + arg2
+    def normal(self, arg1, arg2): # Ожидает получить экземпляр при вызове
+        return self.data + arg1 + arg2
+X = Selfless(2)
+print("class Selfless")
+print(X.normal(3, 4)) # Экземпляр передается автоматически
+print(Selfless.normal(X, 3, 4)) # Метод ожидает получить self передается вручную
+print(Selfless.selfless(3, 4)) # Вызов без экземпляра: работает в 3.0, но завершается ошибкой в 2.6!
+
+class Number:
+    def __init__(self, base):
+        self.base = base
+    def double(self):
+        return self.base * 2
+    def triple(self):
+        return self.base * 3
+x = Number(2) # Объекты экземпляров класса
+y = Number(3) # Атрибуты + методы
+z = Number(4)
+print("class Number")
+print(x.double())  # Обычный непосредственный вызов
+acts = [x.double, y.double, y.triple, z.double] # Список связанных методов
+for act in acts: # Вызовы откладываются
+    print(act()) # Вызов как функции
+
+"""
+простые функции, определенные с помощью инструкции def или lambda, экзем-
+пляры, наследующие метод __call__, и связанные методы экземпляров могут
+обрабатываться и вызываться одинаковыми способами
+"""
+def square(arg):
+    return arg ** 2 # Простые функции (def или lambda)
+class Sum:
+    def __init__(self, val): # Вызываемые экземпляры
+        self.val = val
+    def __call__(self, arg):
+        return self.val + arg
+class Product:
+    def __init__(self, val): # Связанные методы
+        self.val = val
+    def method(self, arg):
+        return self.val * arg
+
+sobject = Sum(2)
+pobject = Product(3)
+actions = [square, sobject, pobject.method] # Функция, экземпляр, метод
+print("square")
+for act in actions: # Все 3 вызываются одинаково
+    print(act(5)) # Вызов любого вызываемого объекта с 1 аргументом
+print(actions[-1](5)) # Индексы, генераторы, отображения
+print([act(5) for act in actions])
+print(list(map(lambda act: act(5), actions)))
+
+
